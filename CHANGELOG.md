@@ -1,3 +1,10 @@
+### [0.22.6](https://github.com/oktus-io/vercel-builder/compare/v0.22.5...v0.22.6) (2022-05-13)
+
+
+### Bug Fixes
+
+* (pnpm) removed incompatible flags ([1c95191](https://github.com/oktus-io/vercel-builder/commit/1c95191b5cbc52f5dae7c33e5833ae13d10560c6))
+
 ### [0.22.5](https://github.com/oktus-io/vercel-builder/compare/v0.22.4...v0.22.5) (2022-05-13)
 
 
