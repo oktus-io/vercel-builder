@@ -1,3 +1,10 @@
+### [0.22.10](https://github.com/oktus-io/vercel-builder/compare/v0.22.9...v0.22.10) (2022-05-13)
+
+
+### Bug Fixes
+
+* removed lockfile creation ([4d6a7fd](https://github.com/oktus-io/vercel-builder/commit/4d6a7fd4f64f2fc51d28657e7e0f26c4a9908a24))
+
 ### [0.22.9](https://github.com/oktus-io/vercel-builder/compare/v0.22.8...v0.22.9) (2022-05-13)
 
 
