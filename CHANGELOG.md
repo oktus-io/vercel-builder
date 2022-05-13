@@ -1,3 +1,10 @@
+### [0.22.4](https://github.com/oktus-io/vercel-builder/compare/v0.22.3...v0.22.4) (2022-05-13)
+
+
+### Bug Fixes
+
+* logging runtime options ([258b4d9](https://github.com/oktus-io/vercel-builder/commit/258b4d97053df7483b2b9796f36b0655c33fad9c))
+
 ### [0.22.3](https://github.com/oktus-io/vercel-builder/compare/v0.22.1...v0.22.3) (2022-05-13)
 
 
