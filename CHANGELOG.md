@@ -1,3 +1,10 @@
+### [0.22.8](https://github.com/oktus-io/vercel-builder/compare/v0.22.7...v0.22.8) (2022-05-13)
+
+
+### Bug Fixes
+
+* added pnpm flags ([670cf7e](https://github.com/oktus-io/vercel-builder/commit/670cf7e5bf20e4b12274249bcf9d15c6e471d1e2))
+
 ### [0.22.7](https://github.com/oktus-io/vercel-builder/compare/v0.22.6...v0.22.7) (2022-05-13)
 
 
