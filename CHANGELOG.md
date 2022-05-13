@@ -1,3 +1,10 @@
+### [0.22.9](https://github.com/oktus-io/vercel-builder/compare/v0.22.8...v0.22.9) (2022-05-13)
+
+
+### Bug Fixes
+
+* updates ([d31babc](https://github.com/oktus-io/vercel-builder/commit/d31babcc600b302d689415cf26b709e5b9d8f14e))
+
 ### [0.22.8](https://github.com/oktus-io/vercel-builder/compare/v0.22.7...v0.22.8) (2022-05-13)
 
 
