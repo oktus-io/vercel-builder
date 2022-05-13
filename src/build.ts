@@ -98,11 +98,11 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   }
 
   // Write lock-file
-  if (isPnpm && !fs.existsSync('../pnpm-lock.yaml')) {
-    const lockPath = path.join(__dirname, '../../../pnpm-lock.yaml')
-    consola.log('Lockfile Path:', lockPath)
-    await fs.copyFile(lockPath, 'pnpm-lock.yaml')
-  }
+  // if (isPnpm && !fs.existsSync('../pnpm-lock.yaml')) {
+  //   const lockPath = path.join(__dirname, '../../../pnpm-lock.yaml')
+  //   consola.log('Lockfile Path:', lockPath)
+  //   await fs.copyFile(lockPath, 'pnpm-lock.yaml')
+  // }
 
   // Cache dir
   const cachePath = path.resolve(entrypointPath, '.vercel_cache')
