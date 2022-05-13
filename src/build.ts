@@ -31,7 +31,7 @@ interface NuxtBuilderConfig {
 export async function build (opts: BuildOptions & { config: NuxtBuilderConfig }): Promise<BuilderOutput> {
   const { files, entrypoint, workPath, config = {}, meta = {} } = opts
   // ---------------- Debugging context --------------
-  consola.log('Running with @nuxt/vercel-builder version', require('../package.json').version)
+  consola.log('Running with @oktus/vercel-builder version', require('../package.json').version)
 
   // ----------------- Prepare build -----------------
   startStep('Prepare build')
@@ -64,6 +64,7 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
 
   // Node version
   const nodeVersion = await getNodeVersion(entrypointPath, undefined, {}, meta)
+  consola.log('Node Version:', nodeVersion)
   const spawnOpts = getSpawnOptions(meta, nodeVersion)
 
   // Prepare TypeScript environment if required.
@@ -76,9 +77,10 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
     })
   }
 
-  // Detect npm (prefer yarn)
-  const isYarn = !fs.existsSync('package-lock.json')
-  consola.log('Using', isYarn ? 'yarn' : 'npm')
+  // Detect package manager (prefer pnpm)
+  const isPnpm = fs.existsSync('pnpm-lock.yaml')
+  const isYarn = fs.existsSync('yarn-lock.json')
+  consola.log('Using', isPnpm ? 'pnpm' : isYarn ? 'yarn' : 'npm')
 
   // Write .npmrc
   if (process.env.NPM_RC) {
@@ -117,6 +119,8 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   await prepareNodeModules(entrypointPath, 'node_modules_dev')
 
   // Install all dependencies
+  consola.log('Spawn Opts:', spawnOpts)
+  consola.log('Meta:', meta)
   await runNpmInstall(entrypointPath, [
     '--prefer-offline',
     '--frozen-lockfile',
