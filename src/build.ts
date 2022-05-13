@@ -1,6 +1,6 @@
 import path from 'path'
 
-import { createLambda, BuildOptions, download, File, FileBlob, FileFsRef, glob, getNodeVersion, getSpawnOptions, Lambda, runNpmInstall, runPackageJsonScript } from '@vercel/build-utils'
+import { createLambda, BuildOptions, download, File, FileBlob, FileFsRef, glob, getSpawnOptions, Lambda, runNpmInstall, runPackageJsonScript } from '@vercel/build-utils'
 import type { Route } from '@vercel/routing-utils'
 import consola from 'consola'
 import fs from 'fs-extra'
@@ -63,7 +63,8 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   }
 
   // Node version
-  const nodeVersion = await getNodeVersion(entrypointPath, undefined, {}, meta)
+  // const nodeVersion = await getNodeVersion(entrypointPath, undefined, {}, meta)
+  const nodeVersion = { major: 14, range: '14.x', runtime: 'nodejs14.x' }
   consola.log('Node Version:', nodeVersion)
   const spawnOpts = getSpawnOptions(meta, nodeVersion)
 
@@ -119,8 +120,6 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   await prepareNodeModules(entrypointPath, 'node_modules_dev')
 
   // Install all dependencies
-  consola.log('Spawn Opts:', spawnOpts)
-  consola.log('Meta:', meta)
   await runNpmInstall(entrypointPath, [
     '--prefer-offline',
     '--frozen-lockfile',
