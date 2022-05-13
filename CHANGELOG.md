@@ -1,3 +1,10 @@
+### [0.22.11](https://github.com/oktus-io/vercel-builder/compare/v0.22.10...v0.22.11) (2022-05-13)
+
+
+### Bug Fixes
+
+* prioritize yarn ([646446e](https://github.com/oktus-io/vercel-builder/commit/646446e143933ff673c1a9787537cd1d9ad1abfe))
+
 ### [0.22.10](https://github.com/oktus-io/vercel-builder/compare/v0.22.9...v0.22.10) (2022-05-13)
 
 
