@@ -1,3 +1,10 @@
+### [0.22.7](https://github.com/oktus-io/vercel-builder/compare/v0.22.6...v0.22.7) (2022-05-13)
+
+
+### Bug Fixes
+
+* removed flags/args ([5b7eebd](https://github.com/oktus-io/vercel-builder/commit/5b7eebd61c4e8b9a45949e4af54e752477edf2ce))
+
 ### [0.22.6](https://github.com/oktus-io/vercel-builder/compare/v0.22.5...v0.22.6) (2022-05-13)
 
 
