@@ -41,8 +41,7 @@ jobs:
 
       - name: Test
         run: yarn test
-
-      - name: Coverage
-        run: yarn codecov
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      # - name: Coverage
+      #   run: yarn codecov
+      #   env:
+      #     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
