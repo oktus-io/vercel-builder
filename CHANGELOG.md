@@ -1,3 +1,10 @@
+### [0.22.3](https://github.com/oktus-io/vercel-builder/compare/v0.22.1...v0.22.3) (2022-05-13)
+
+
+### Bug Fixes
+
+* removed codecov from main workflow ([0f0e644](https://github.com/oktus-io/vercel-builder/commit/0f0e64422918bd63a1077a27daff07d934e50546))
+
 ### [0.22.1](https://github.com/nuxt/vercel-builder/compare/v0.22.0...v0.22.1) (2021-09-28)
 
 
