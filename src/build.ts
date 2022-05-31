@@ -79,9 +79,9 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   }
 
   // Detect package manager (prefer pnpm)
-  // const isPnpm = fs.existsSync('pnpm-lock.yaml')
+  const isPnpm = fs.existsSync('pnpm-lock.yaml')
   const isYarn = !fs.existsSync('package-lock.json')
-  consola.log('Using', isYarn ? 'yarn' : 'npm')
+  consola.log('Using', isPnpm ? 'pnpm' : isYarn ? 'yarn' : 'npm')
 
   // Write .npmrc
   if (process.env.NPM_RC) {
@@ -127,25 +127,24 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   await prepareNodeModules(entrypointPath, 'node_modules_dev')
 
   // Install all dependencies
-  // if (isPnpm) {
-  //   try {
-  //     await runNpmInstall(entrypointPath, [
-  //       '--prefer-offline',
-  //       '--fix-lockfile'
-  //     ], { ...spawnOpts, env: { ...spawnOpts?.env, NODE_ENV: 'development' } }, meta)
-  //   } catch (error) {
-  //     consola.error(error)
-  //   }
-  // } else {
-  await runNpmInstall(entrypointPath, [
-    '--prefer-offline',
-    '--frozen-lockfile',
-    '--non-interactive',
-    '--production=false',
-    `--modules-folder=${modulesPath}`,
-    `--cache-folder=${yarnCachePath}`
-  ], { ...spawnOpts, env: { ...spawnOpts.env, NODE_ENV: 'development' } }, meta)
-  // }
+  if (isPnpm) {
+    try {
+      await runNpmInstall(entrypointPath, [
+        '--prefer-offline'
+      ], { ...spawnOpts, env: { ...spawnOpts?.env, NODE_ENV: 'development' } }, meta)
+    } catch (error) {
+      consola.error(error)
+    }
+  } else {
+    await runNpmInstall(entrypointPath, [
+      '--prefer-offline',
+      '--frozen-lockfile',
+      '--non-interactive',
+      '--production=false',
+      `--modules-folder=${modulesPath}`,
+      `--cache-folder=${yarnCachePath}`
+    ], { ...spawnOpts, env: { ...spawnOpts.env, NODE_ENV: 'development' } }, meta)
+  }
 
   // ----------------- Pre build -----------------
   const buildSteps = ['vercel-build', 'now-build']
