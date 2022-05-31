@@ -1,3 +1,10 @@
+### [0.22.13](https://github.com/oktus-io/vercel-builder/compare/v0.22.12...v0.22.13) (2022-05-31)
+
+
+### Bug Fixes
+
+* readded pnpm case ([ce5ce9d](https://github.com/oktus-io/vercel-builder/commit/ce5ce9dc8df67d26d7aa49c39bcb30b1983af80c))
+
 ### [0.22.12](https://github.com/oktus-io/vercel-builder/compare/v0.22.11...v0.22.12) (2022-05-31)
 
 
