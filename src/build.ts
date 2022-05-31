@@ -79,9 +79,9 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   }
 
   // Detect package manager (prefer pnpm)
-  const isPnpm = fs.existsSync('pnpm-lock.yaml')
+  // const isPnpm = fs.existsSync('pnpm-lock.yaml')
   const isYarn = !fs.existsSync('package-lock.json')
-  consola.log('Using', isPnpm ? 'pnpm' : isYarn ? 'yarn' : 'npm')
+  consola.log('Using', isYarn ? 'yarn' : 'npm')
 
   // Write .npmrc
   if (process.env.NPM_RC) {
