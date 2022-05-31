@@ -1,3 +1,10 @@
+### [0.22.12](https://github.com/oktus-io/vercel-builder/compare/v0.22.11...v0.22.12) (2022-05-31)
+
+
+### Bug Fixes
+
+* temporarily remove pnpm ([39cf128](https://github.com/oktus-io/vercel-builder/commit/39cf1283ea4535e5a0e4f5f62fb2c5a8e308bbc2))
+
 ### [0.22.11](https://github.com/oktus-io/vercel-builder/compare/v0.22.10...v0.22.11) (2022-05-13)
 
 
