@@ -1,3 +1,10 @@
+### [0.22.15](https://github.com/oktus-io/vercel-builder/compare/v0.22.14...v0.22.15) (2022-06-05)
+
+
+### Bug Fixes
+
+* allow pnpm lockfile manipulation ([e1a28d9](https://github.com/oktus-io/vercel-builder/commit/e1a28d9bb4f018ddad3009d4d7584c9f8f468737))
+
 ### [0.22.14](https://github.com/oktus-io/vercel-builder/compare/v0.22.13...v0.22.14) (2022-06-05)
 
 
