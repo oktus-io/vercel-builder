@@ -1,6 +1,6 @@
 {
   "name": "@oktus/vercel-builder",
-  "version": "0.22.13",
+  "version": "0.22.14",
   "repository": "oktus-io/vercel-builder",
   "license": "MIT",
   "exports": {
