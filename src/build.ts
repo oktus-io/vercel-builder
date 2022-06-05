@@ -211,6 +211,8 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   if (isPnpm) {
     await runNpmInstall(entrypointPath, [
       '--prefer-offline',
+      '--no-frozen-lockfile',
+      '--fix-lockfile',
       '--prod'
     ], {
       ...spawnOpts,
