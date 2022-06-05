@@ -208,20 +208,33 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   const nuxtDep = preparePkgForProd(pkg)
   await fs.writeJSON('package.json', pkg)
 
-  await runNpmInstall(entrypointPath, [
-    '--prefer-offline',
-    '--pure-lockfile',
-    '--non-interactive',
-    '--production=true',
-    `--modules-folder=${modulesPath}`,
-    `--cache-folder=${yarnCachePath}`
-  ], {
-    ...spawnOpts,
-    env: {
-      ...spawnOpts.env,
-      NPM_ONLY_PRODUCTION: 'true'
-    }
-  }, meta)
+  if (isPnpm) {
+    await runNpmInstall(entrypointPath, [
+      '--prefer-offline',
+      '--prod'
+    ], {
+      ...spawnOpts,
+      env: {
+        ...spawnOpts.env,
+        NPM_ONLY_PRODUCTION: 'true'
+      }
+    }, meta)
+  } else {
+    await runNpmInstall(entrypointPath, [
+      '--prefer-offline',
+      '--pure-lockfile',
+      '--non-interactive',
+      '--production=true',
+      `--modules-folder=${modulesPath}`,
+      `--cache-folder=${yarnCachePath}`
+    ], {
+      ...spawnOpts,
+      env: {
+        ...spawnOpts.env,
+        NPM_ONLY_PRODUCTION: 'true'
+      }
+    }, meta)
+  }
 
   // Validate nuxt version
   const nuxtPkg = require(resolveFrom(entrypointPath, `@nuxt/core${nuxtDep.suffix}/package.json`))
